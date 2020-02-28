@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <form >
+    <div class="form-group">
+      <select (change)="onChange($event.target.value)" class="form-control">
+        <option  [value]=undefined>Select a country</option>
+        <option *ngFor="let country of countries" [value]="country.alpha3Code">{{country.name}}</option>
+      </select>
+    </div>
+  </form>
+</nav>

@@ -1,0 +1,70 @@
+<h2 class="text-center">Home - Country List</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tbody>
+      <div *ngIf="!this.apiService.countryDetail; then thenBlock else elseBlock"></div>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #thenBlock>
+  <tr>
+    <td>Country Name</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Capital</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Region</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Sub Region</td>
+    <td>-</td>
+  </tr>
+   <tr>
+    <td>Population</td>
+    <td>-</td>
+  </tr>
+   <tr>
+    <td>Area</td>
+    <td>-</td>
+  </tr>
+    <tr>
+    <td>alpha3Code</td>
+    <td>-</td>
+  </tr>
+</ng-template>
+<ng-template #elseBlock>
+  <tr>
+    <td>Country Name</td>
+    <td>{{this.apiService.countryDetail.name}}</td>
+  </tr>
+  <tr>
+    <td>Capital</td>
+    <td>{{this.apiService.countryDetail.capital}}</td>
+  </tr>
+  <tr>
+    <td>Region</td>
+    <td>{{this.apiService.countryDetail.region}}</td>
+  </tr>
+  <tr>
+    <td>Sub Region</td>
+    <td>{{this.apiService.countryDetail.subregion}}</td>
+  </tr>
+  <tr>
+    <td>Population</td>
+    <td>{{this.apiService.countryDetail.population}}</td>
+  </tr>
+  <tr>
+    <td>Area</td>
+    <td>{{this.apiService.countryDetail.area}}</td>
+  </tr>
+  <tr>
+    <td>alpha3Code</td>
+    <td>{{this.apiService.countryDetail.alpha3Code}}</td>
+  </tr>
+</ng-template>
+
