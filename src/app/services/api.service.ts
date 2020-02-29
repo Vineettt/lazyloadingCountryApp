@@ -6,14 +6,17 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  country: any;
+  countryCode: any;
   countryDetail: object;
 
+  // Fetch Countries
   constructor(private http: HttpClient) { }
   getCountries() {
     return this.http.get('https://restcountries.eu/rest/v2/all').pipe(map(res => res));
   }
-  getCountry(country) {
-    return this.http.get(`https://restcountries.eu/rest/v2/alpha/${country}`).pipe(map(res => res));
+
+  // Fetch Country Detail using alpha3code
+  getCountry(countryCode: any) {
+    return this.http.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`).pipe(map(res => res));
   }
 }

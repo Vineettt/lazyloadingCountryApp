@@ -21,10 +21,15 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  // fetch Country Detail using alpha3code
   onChange( deviceValue: any) {
-    if(deviceValue !== 'undefined') {
-      this.apiService.country = deviceValue;
-      this.apiService.getCountry(deviceValue).subscribe( countryDetail =>{
+    // Execute if block when the user select a undefined value
+    // Execute Else when user select a alpha3code
+    if ( deviceValue !== 'undefined') {
+      // Assigning alpha3code to countryCode variable
+      this.apiService.countryCode = deviceValue;
+      this.apiService.getCountry(deviceValue).subscribe( countryDetail => {
+        // Assigning countryDeatil to countryDetail object
         this.apiService.countryDetail = countryDetail;
       },
       err => {
@@ -32,7 +37,7 @@ export class HeaderComponent implements OnInit {
         return false;
       });
     } else {
-      this.apiService.country = undefined;
+      this.apiService.countryCode = undefined;
       this.apiService.countryDetail = undefined;
     }
   }
