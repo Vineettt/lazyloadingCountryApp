@@ -2,7 +2,7 @@
 <div class="table-responsive">
   <table class="table table-striped">
     <tbody>
-      <div *ngIf="!this.apiService.countryDetail; then thenBlock else elseBlock"></div>
+      <div *ngIf="!this.countryDetail; then thenBlock else elseBlock"></div>
     </tbody>
   </table>
 </div>
@@ -40,31 +40,31 @@
 <ng-template #elseBlock>
   <tr>
     <td>Country Name</td>
-    <td>{{this.apiService.countryDetail.name}}</td>
+    <td>{{this.countryDetail.name}}</td>
   </tr>
   <tr>
     <td>Capital</td>
-    <td>{{this.apiService.countryDetail.capital}}</td>
+    <td>{{countryDetail.capital}}</td>
   </tr>
   <tr>
     <td>Region</td>
-    <td>{{this.apiService.countryDetail.region}}</td>
+    <td>{{countryDetail.region}}</td>
   </tr>
   <tr>
     <td>Sub Region</td>
-    <td>{{this.apiService.countryDetail.subregion}}</td>
+    <td>{{countryDetail.subregion}}</td>
   </tr>
   <tr>
     <td>Population</td>
-    <td>{{this.apiService.countryDetail.population}}</td>
+    <td>{{countryDetail.population}}</td>
   </tr>
   <tr>
     <td>Area</td>
-    <td>{{this.apiService.countryDetail.area}}</td>
+    <td>{{countryDetail.area}}</td>
   </tr>
   <tr>
     <td>alpha3Code</td>
-    <td>{{this.apiService.countryDetail.alpha3Code}}</td>
+    <td>{{countryDetail.alpha3Code}}</td>
   </tr>
 </ng-template>
 

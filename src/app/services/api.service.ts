@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 })
 export class ApiService {
   countryCode: any;
-  countryDetail: object;
 
   // Fetch Countries
   constructor(private http: HttpClient) { }

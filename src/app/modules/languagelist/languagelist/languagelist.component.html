@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <div *ngIf="!this.apiService.countryDetail; then thenBlock else elseBlock"></div>
+      <div *ngIf="!this.countryDetail; then thenBlock else elseBlock"></div>
     </tbody>
   </table>
 </div>
@@ -20,7 +20,7 @@
   </tr>
 </ng-template>
 <ng-template #elseBlock>
-  <tr *ngFor="let country of this.apiService.countryDetail.languages">
+  <tr *ngFor="let country of this.countryDetail.languages">
     <td>{{country.name}}</td>
     <td>{{country.nativeName}}</td>
   </tr>

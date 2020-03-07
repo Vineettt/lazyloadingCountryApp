@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-
+import { DataService } from './../../services/data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,8 +8,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class HeaderComponent implements OnInit {
   countries: object;
-
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private data: DataService) { }
 
   ngOnInit() {
     this.apiService.getCountries().subscribe( countries => {
@@ -30,7 +29,7 @@ export class HeaderComponent implements OnInit {
       this.apiService.countryCode = deviceValue;
       this.apiService.getCountry(deviceValue).subscribe( countryDetail => {
         // Assigning countryDeatil to countryDetail object
-        this.apiService.countryDetail = countryDetail;
+        this.data.changeData(countryDetail);
       },
       err => {
         console.log(err);
@@ -38,7 +37,6 @@ export class HeaderComponent implements OnInit {
       });
     } else {
       this.apiService.countryCode = undefined;
-      this.apiService.countryDetail = undefined;
     }
   }
 
