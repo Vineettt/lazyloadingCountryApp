@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
       // Assigning alpha3code to countryCode variable
       this.apiService.countryCode = deviceValue;
       this.apiService.getCountry(deviceValue).subscribe( countryDetail => {
-        // Assigning countryDeatil to countryDetail object
+        // Updating data.service data
         this.data.changeData(countryDetail);
       },
       err => {
