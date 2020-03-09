@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
       });
     } else {
       this.apiService.countryCode = undefined;
+      this.data.changeData(undefined);
     }
   }
 
